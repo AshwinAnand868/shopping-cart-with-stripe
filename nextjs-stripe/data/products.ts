@@ -6,6 +6,7 @@ export const data = [
         currency: 'USD',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
         imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
+        href: ''
     },
     {
         id: 'price_1McBPVC4V4bOyW0mqtp8qNLn',
@@ -14,6 +15,7 @@ export const data = [
         currency: 'USD',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
         imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
+        href: ''
     },
     {
         id: 'price_1McBQBC4V4bOyW0m4sCYXwDz',
@@ -22,6 +24,7 @@ export const data = [
         currency: 'USD',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg',
         imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
+        href: ''
     },
     {
         id: 'price_1McBQkC4V4bOyW0mk4NGp6bY',
@@ -30,5 +33,6 @@ export const data = [
         currency: 'USD',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
         imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+        href: ''
     },
 ]
