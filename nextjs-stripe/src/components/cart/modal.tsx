@@ -3,10 +3,16 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import OpenCart from '@/components/cart/open-cart';
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { ShoppingCartIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useShoppingCart } from 'use-shopping-cart';
+import CartItem from './cart-item';
+import CartItemComponent from './cart-item';
+import CheckoutButton from './checkout';
 
 export default function CartModal() {
     const [openCart, setOpenCart] = useState(false);
+    const { cartCount, cartDetails } = useShoppingCart();
+
     return (
         <>
             <button aria-label='Open cart' onClick={() => setOpenCart(true)}>
@@ -61,7 +67,16 @@ export default function CartModal() {
                                                     <div className="flow-root">
                                                         <ul role="list"
                                                             className="grid grid-cols-1 divide-y divide-gray-200">
-                                                            {/* Items */}
+                                                            {cartCount && cartCount > 0
+                                                                ? Object.values(cartDetails ?? {}).map((item) => (
+                                                                    <CartItemComponent key={item.id} item={item} />
+                                                                ))
+                                                                : <div
+                                                                    className='mt-20 flex w-full flex-col items-center justify-center overflow-hidden'>
+                                                                    <ShoppingCartIcon className='h-16' />
+                                                                    <p className='mt-6 text-center text-2xl font-bold'>Your cart is empty.</p>
+                                                                </div>
+                                                            }
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -74,10 +89,7 @@ export default function CartModal() {
                                                 </div>
                                                 <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                                 <div className="mt-6">
-                                                    <a href="#"
-                                                        className="flex items-center justify-center rounded-md border border-transparent bg-sky-900 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-sky-700">
-                                                        Checkout
-                                                    </a>
+                                                    <CheckoutButton />
                                                 </div>
                                                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                                                     <p> or
