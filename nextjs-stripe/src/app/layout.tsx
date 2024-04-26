@@ -28,9 +28,9 @@ export default function RootLayout({
                 <span>Next App Cart</span>
               </div>
               <div className="flex justify-end md:w-1/2">
-                <Suspense fallback={<OpenCart />}>
+                {/* <Suspense fallback={<OpenCart />}> */}
                   <Cart />
-                </Suspense>
+                {/* </Suspense> */}
               </div>
             </div>
           </nav>

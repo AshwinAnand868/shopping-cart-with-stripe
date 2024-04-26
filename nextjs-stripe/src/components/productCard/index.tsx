@@ -8,7 +8,7 @@ type Props = {
 
 export default function ProductCard({product}: Props) {
     return (
-        <a key={product.id} href="#" className="group">
+        <div key={product.id} className="group"> {/* href="#" */}
             <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                 <Image 
                     src={product.imageSrc}
@@ -24,6 +24,6 @@ export default function ProductCard({product}: Props) {
                 }).format(product.price / 100)}</p>
                 <AddToCart product={product}/>
             </div>
-        </a>
+        </div>
     )
 }
